@@ -4,17 +4,20 @@ const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
     const [sequence, setSequence] = useState([]);
-    const [userSelection, setUserSelection] = useState([]);
+    const [selectedNumbers, setSelectedNumbers] = useState([]);
+    const [hintNumbers, setHintNumbers] = useState([]);
     const starterNums = [0, 1, 2, 3, 4, 5, 6, 7]
-    console.log(userSelection)
+    console.log("HINT NUMBERS", hintNumbers);
 
     return (
         <UserContext.Provider
             value={{
                 sequence,
                 setSequence,
-                userSelection,
-                setUserSelection,
+                selectedNumbers,
+                setSelectedNumbers,
+                hintNumbers,
+                setHintNumbers,
                 starterNums
             }}
         >{children}</UserContext.Provider>

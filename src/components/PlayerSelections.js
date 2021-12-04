@@ -2,21 +2,30 @@ import React, { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
 const PlayerSelections = () => {
-    const { userSelection } = useContext(UserContext)
-    return (
-        <>
-            <h4>Current Selection</h4>
+    const { selectedNumbers, setSelectedNumbers, setHintNumbers} = useContext(UserContext)
 
+    const formSubmitHandler = (event) => {
+        event.preventDefault();
+        setHintNumbers([...selectedNumbers])
+        setSelectedNumbers([]);
+    }
+
+    return (
+        <form onSubmit={formSubmitHandler}>
+            <h4>Current Selection</h4>
             {
-                userSelection.length > 4 ? userSelection.length = ""
-                    :
-                    userSelection.map((selectedNum, id) => (
-                        <button style={{ margin: "5px" }} key={id}>
-                            {selectedNum}
-                        </button>
-                    ))
+                selectedNumbers.map((selectedNum, id) => (
+                    <button className="number" key={id}>
+                        {selectedNum}
+                    </button>
+                ))
             }
-        </>
+            {
+                selectedNumbers.length === 4 ? <button className="submit" type="submit">?</button>
+                    :
+                    null
+            }
+        </form>
     )
 }
 
