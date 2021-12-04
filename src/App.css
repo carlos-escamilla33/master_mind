@@ -19,3 +19,35 @@
 .board {
     display: flex;
 }
+
+.full {
+    display: flex;
+    background-color: green;
+    justify-content: center;
+    font-size: 35px;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.half {
+    display: flex;
+    background-color: grey;
+    justify-content: center;
+    font-size: 35px;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    margin: 5px;
+}
+.empty {
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    width: 50px;
+    height: 50px;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: 5px;
+}
