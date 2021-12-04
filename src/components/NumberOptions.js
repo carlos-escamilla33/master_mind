@@ -7,10 +7,10 @@ const NumberOptions = () => {
     const onClickHandler = (event) => {
         const selectedNum = event.target.value
         setSelectedNumbers([...selectedNumbers, selectedNum])
-    }
+    };
     return (
-        <>
-            <h4>Pick a number</h4>
+        <div className="board">
+            <h4>Pick a number sequence</h4>
             {
                 starterNums.map((num, id) => (
                     <button value={num} className="number" onClick={onClickHandler} key={id}>
@@ -18,7 +18,7 @@ const NumberOptions = () => {
                     </button>
                 ))
             }
-        </>
+        </div>
     )
 }
 

@@ -8,6 +8,7 @@ const UserProvider = ({ children }) => {
     const [hintNumbers, setHintNumbers] = useState([]);
     const starterNums = [0, 1, 2, 3, 4, 5, 6, 7]
     console.log("HINT NUMBERS", hintNumbers);
+    console.log("SEQUENCE", sequence);
 
     return (
         <UserContext.Provider

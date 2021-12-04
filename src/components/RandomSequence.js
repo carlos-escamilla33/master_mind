@@ -9,7 +9,6 @@ const RandomSequence = () => {
     const randomNums = async () => {
         try {
             const response = await getRandomNums();
-            console.log(response);
             setSequence(response);
         }
         catch (error) {
