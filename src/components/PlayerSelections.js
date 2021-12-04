@@ -5,7 +5,7 @@ const PlayerSelections = () => {
     const { userSelection } = useContext(UserContext)
     return (
         <>
-            <h4>Player Selections</h4>
+            <h4>Current Selection</h4>
 
             {
                 userSelection.length > 4 ? userSelection.length = ""

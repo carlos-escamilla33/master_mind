@@ -2,7 +2,8 @@ import React from "react";
 import {
     RandomSequence,
     NumberOptions,
-    PlayerSelections
+    PlayerSelections,
+    Hints
 } from "./components";
 import "./App.css"
 
@@ -12,6 +13,7 @@ const App = () => {
             <RandomSequence />
             <NumberOptions />
             <PlayerSelections />
+            <Hints />
         </>
     )
 }

@@ -4,7 +4,7 @@ const API_URL = "https://www.random.org/integers/?num=4&min=0&max=7&col=1&base=1
 const getRandomNums = async () => {
     try {
         const response = await axios.get(API_URL);
-        const data = response.data.split("\n").filter(function(str) {
+        const data = await response.data.split("\n").filter((str) => {
             return /\S/.test(str);
         });
         return data;

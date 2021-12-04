@@ -2,17 +2,22 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
 
 const NumberOptions = () => {
-    const { userSelection, setUserSelection } = useContext(UserContext);
-    const starterNums = [0, 1, 2, 3, 4, 5, 6, 7]
+    const { userSelection, setUserSelection, starterNums } = useContext(UserContext);
     const onClickHandler = (event) => {
-        setUserSelection([...userSelection, event.target.value])
+        const selectedNum = event.target.value
+        if (selectedNum in starterNums) {
+            console.log('match')
+        } else {
+            null
+        }
+        setUserSelection([...userSelection, selectedNum])
     }
     return (
         <>
-            <h4>Player Selection Options</h4>
+            <h4>Pick a number</h4>
             {
                 starterNums.map((num, id) => (
-                    <button value={num} style={{margin: "10px"}}onClick={onClickHandler} key={id}>
+                    <button value={num} style={{ margin: "10px" }} onClick={onClickHandler} key={id}>
                         {num}
                     </button>
                 ))
