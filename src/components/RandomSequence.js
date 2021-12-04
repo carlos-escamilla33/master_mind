@@ -23,7 +23,7 @@ const RandomSequence = () => {
 
     return (
         <>
-            <h1>Generating random number sequence</h1>
+            <h1>Generating Winning Sequence</h1>
                 {
                     sequence.length > 0 ? sequence.map((num, id) => {
                         return (
