@@ -1,14 +1,17 @@
 import React from "react";
 import {
     RandomSequence,
-    NumberOptions
+    NumberOptions,
+    PlayerSelections
 } from "./components";
+import "./App.css"
 
 const App = () => {
     return (
         <>
-            <NumberOptions />  
             <RandomSequence />
+            <NumberOptions />
+            <PlayerSelections />
         </>
     )
 }

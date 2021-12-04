@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { UserContext } from "../context/UserContext";
 
 const NumberOptions = () => {
-    const numOptions = [0, 1, 2, 3, 4, 5, 6, 7];
-
+    const { userSelection, setUserSelection } = useContext(UserContext);
+    const starterNums = [0, 1, 2, 3, 4, 5, 6, 7]
+    const onClickHandler = (event) => {
+        setUserSelection([...userSelection, event.target.value])
+    }
     return (
-        <form>
-            <h2>Number Board</h2>
+        <>
+            <h4>Player Selection Options</h4>
             {
-                numOptions.map((num, id) => (
-                    <div key={id}>
-                        <h4>{num}</h4>
-                    </div>
+                starterNums.map((num, id) => (
+                    <button value={num} style={{margin: "10px"}}onClick={onClickHandler} key={id}>
+                        {num}
+                    </button>
                 ))
             }
-            <button type="submit">Submit</button>
-        </form>
+        </>
     )
 }
 

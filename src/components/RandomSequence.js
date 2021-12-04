@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../context/UserContext";
 import getRandomNums from "../randomApi/randomApi";
+import { NumberOptions } from ".";
 
 const RandomSequence = () => {
     const { sequence, setSequence } = useContext(UserContext);
@@ -22,20 +23,20 @@ const RandomSequence = () => {
     }, [])
 
     return (
-        <>
-            <h1>Generating Winning Sequence</h1>
-                {
-                    sequence.length > 0 ? sequence.map((num, id) => {
-                        return (
-                            <div key={id}>
-                                <h1>{num}</h1>
-                            </div>
-                        )
-                    }) :
+        <div>
+            <h4>Winning Sequence</h4>
+            {
+                sequence.length > 0 ? sequence.map((num, id) => {
+                    return (
+                        <div key={id}>
+                            {num}
+                        </div>
+                    )
+                }) :
                     <h3>Loading Nums...</h3>
-                }
-            </>
-            )
+            }
+        </div>
+    )
 }
 
-            export default RandomSequence;
+export default RandomSequence;
