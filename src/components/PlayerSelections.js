@@ -11,21 +11,23 @@ const PlayerSelections = () => {
     }
 
     return (
-        <form className="board" onSubmit={formSubmitHandler}>
+        <>
             <h4>Current Selection</h4>
-            {
-                selectedNumbers.map((selectedNum, id) => (
-                    <button className="number" key={id}>
-                        {selectedNum}
-                    </button>
-                ))
-            }
-            {
-                selectedNumbers.length === 4 ? <button className="submit" type="submit">?</button>
-                    :
-                    null
-            }
-        </form>
+            <form className="lineUp" onSubmit={formSubmitHandler}>
+                {
+                    selectedNumbers.map((selectedNum, id) => (
+                        <button className="number" key={id}>
+                            {selectedNum}
+                        </button>
+                    ))
+                }
+                {
+                    selectedNumbers.length === 4 ? <button className="submit" type="submit">?</button>
+                        :
+                        null
+                }
+            </form>
+        </>
     )
 }
 

@@ -18,7 +18,7 @@ const Hints = () => {
         return hints;
     }
     const hintsArray = calculateHints(hintNumbers);
-    console.log("ORIGINAL",hintsArray)
+    console.log("ORIGINAL", hintsArray)
 
     const shuffleHints = (hintsArr) => {
         for (let i = hintsArr.length - 1; i > 0; i--) {
@@ -35,12 +35,21 @@ const Hints = () => {
     return (
         <>
             <h4>Hints</h4>
-            {
-                shuffledHintArr.length !== 0 ? shuffledHintArr.map((hintNumClass, id) => (
-                    <div className={hintNumClass} key={id}>
-                    </div>
-                )) : ""
-            }
+            <div className="hintGrid">
+                {
+                    shuffledHintArr.length !== 0 ?
+                        shuffledHintArr.map((hintNumClass, id) => (
+                            <div className={hintNumClass} key={id}>
+                            </div>
+                        )) :
+                        <>
+                            <div className="empty" />
+                            <div className="empty" />
+                            <div className="empty" />
+                            <div className="empty" />
+                        </>
+                }
+            </div>
         </>
     )
 }

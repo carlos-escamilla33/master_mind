@@ -22,19 +22,21 @@ const RandomSequence = () => {
     }, [])
 
     return (
-        <div>
+        <>
             <h4>Winning Sequence</h4>
-            {
-                sequence.length > 0 ? sequence.map((num, id) => {
-                    return (
-                        <div key={id}>
-                            {num}
-                        </div>
-                    )
-                }) :
-                    <h3>Loading Nums...</h3>
-            }
-        </div>
+            <div className="sequenceContainer">
+                {
+                    sequence.length > 0 ? sequence.map((num, id) => {
+                        return (
+                            <div className="sequenceNums" key={id}>
+                                {num}
+                            </div>
+                        )
+                    }) :
+                        <h3>Loading Nums...</h3>
+                }
+            </div>
+        </>
     )
 }
 

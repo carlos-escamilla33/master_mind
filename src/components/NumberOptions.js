@@ -9,8 +9,9 @@ const NumberOptions = () => {
         setSelectedNumbers([...selectedNumbers, selectedNum])
     };
     return (
-        <div className="board">
-            <h4>Pick a number sequence</h4>
+        <>
+        <h4>Pick a number sequence</h4>
+        <div className="lineUp">
             {
                 starterNums.map((num, id) => (
                     <button value={num} className="number" onClick={onClickHandler} key={id}>
@@ -19,6 +20,7 @@ const NumberOptions = () => {
                 ))
             }
         </div>
+        </>
     )
 }
 

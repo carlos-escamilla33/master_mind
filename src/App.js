@@ -9,12 +9,12 @@ import "./App.css"
 
 const App = () => {
     return (
-        <>
+        <div className="board">
             <RandomSequence />
-            <NumberOptions />
             <PlayerSelections />
             <Hints />
-        </>
+            <NumberOptions />
+        </div>
     )
 }
 
