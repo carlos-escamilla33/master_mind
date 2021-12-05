@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { UserContext } from "../context/UserContext";
+import { UserContext } from "../../context/UserContext";
 const Hints = () => {
     const { hintNumbers, sequence } = useContext(UserContext);
     const calculateHints = (numbers) => {
@@ -35,19 +35,12 @@ const Hints = () => {
     return (
         <>
             <h4>Hints</h4>
-            <div className="hintGrid">
+            <div>
                 {
-                    shuffledHintArr.length !== 0 ?
-                        shuffledHintArr.map((hintNumClass, id) => (
-                            <div className={hintNumClass} key={id}>
-                            </div>
-                        )) :
-                        <>
-                            <div className="empty" />
-                            <div className="empty" />
-                            <div className="empty" />
-                            <div className="empty" />
-                        </>
+                    shuffledHintArr.map((hintNumClass, id) => (
+                        <div className={hintNumClass} key={id}>
+                        </div>
+                    ))
                 }
             </div>
         </>

@@ -1,5 +1,5 @@
 
-export { default as RandomSequence } from "./RandomSequence.js";
-export { default as NumberOptions } from "./NumberOptions.js";
+export { default as WinningSequence } from "./WinningSequence.js";
+export { default as PlayerOptions } from "./PlayerOptions.js";
 export { default as PlayerSelections } from "./PlayerSelections.js";
-export { default as Hints } from "./Hints.js";
+export { default as Hints } from "./Hints/Hints.js";

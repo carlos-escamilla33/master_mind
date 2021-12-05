@@ -7,13 +7,12 @@ const PlayerSelections = () => {
     const formSubmitHandler = (event) => {
         event.preventDefault();
         setHintNumbers([...selectedNumbers])
-        setSelectedNumbers([]);
     }
 
     return (
         <>
             <h4>Current Selection</h4>
-            <form className="lineUp" onSubmit={formSubmitHandler}>
+            <form onSubmit={formSubmitHandler}>
                 {
                     selectedNumbers.map((selectedNum, id) => (
                         <button className="number" key={id}>
@@ -21,11 +20,7 @@ const PlayerSelections = () => {
                         </button>
                     ))
                 }
-                {
-                    selectedNumbers.length === 4 ? <button className="submit" type="submit">?</button>
-                        :
-                        null
-                }
+                <button type="submit">Submit</button>
             </form>
         </>
     )

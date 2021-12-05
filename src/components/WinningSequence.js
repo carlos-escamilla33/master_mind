@@ -3,7 +3,7 @@ import { UserContext } from "../context/UserContext";
 import getRandomNums from "../randomApi/randomApi";
 import { NumberOptions } from ".";
 
-const RandomSequence = () => {
+const WinningSequence = () => {
     const { sequence, setSequence } = useContext(UserContext);
 
     const randomNums = async () => {
@@ -24,11 +24,11 @@ const RandomSequence = () => {
     return (
         <>
             <h4>Winning Sequence</h4>
-            <div className="sequenceContainer">
+            <div>
                 {
                     sequence.length > 0 ? sequence.map((num, id) => {
                         return (
-                            <div className="sequenceNums" key={id}>
+                            <div key={id}>
                                 {num}
                             </div>
                         )
@@ -40,4 +40,4 @@ const RandomSequence = () => {
     )
 }
 
-export default RandomSequence;
+export default WinningSequence;
