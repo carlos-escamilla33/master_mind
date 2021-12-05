@@ -3,18 +3,16 @@ import { createContext, useState } from "react";
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
-    const [sequence, setSequence] = useState([]);
+    const [winningNumbers, setWinningNumbers] = useState([]);
     const [selectedNumbers, setSelectedNumbers] = useState([]);
     const [hintNumbers, setHintNumbers] = useState([]);
     const starterNums = [0, 1, 2, 3, 4, 5, 6, 7]
-    console.log("HINT NUMBERS", hintNumbers);
-    console.log("SEQUENCE", sequence);
 
     return (
         <UserContext.Provider
             value={{
-                sequence,
-                setSequence,
+                winningNumbers,
+                setWinningNumbers,
                 selectedNumbers,
                 setSelectedNumbers,
                 hintNumbers,

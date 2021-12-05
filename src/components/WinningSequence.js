@@ -4,12 +4,12 @@ import getRandomNums from "../randomApi/randomApi";
 import { NumberOptions } from ".";
 
 const WinningSequence = () => {
-    const { sequence, setSequence } = useContext(UserContext);
+    const { winningNumbers, setWinningNumbers } = useContext(UserContext);
 
     const randomNums = async () => {
         try {
             const response = await getRandomNums();
-            setSequence(response);
+            setWinningNumbers(response);
         }
         catch (error) {
             console.log(error);
@@ -26,7 +26,7 @@ const WinningSequence = () => {
             <h4>Winning Sequence</h4>
             <div>
                 {
-                    sequence.length > 0 ? sequence.map((num, id) => {
+                    winningNumbers.length > 0 ? sequence.map((num, id) => {
                         return (
                             <div key={id}>
                                 {num}
