@@ -5,8 +5,7 @@ import {
     WinningSequence,
     PlayerGuesses
 } from "./components";
-import { createTheme, ThemeProvider } from "@mui/material";
-//  rgb(36, 36, 36); 
+
 const App = () => {
     return (
         <>
