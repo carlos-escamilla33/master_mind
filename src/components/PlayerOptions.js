@@ -1,9 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { UserContext } from "../context/UserContext";
+import { Button, BottomNavigation, Paper } from "@mui/material";
 
 const PlayerOptions = () => {
     const { setSelectedNumbers, starterNums } = useContext(UserContext);
-    
+
     const addSelectedNums = (number) => {
         setSelectedNumbers((prevNumbers) => {
             return [...prevNumbers, number]
@@ -14,19 +15,20 @@ const PlayerOptions = () => {
         const selectedNum = event.target.value
         addSelectedNums(selectedNum);
     };
+
     return (
-        <div>
-            <h4>Pick a number sequence</h4>
-            <div>
+        <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor: "rgb(83 82 84)" }} elevation={3}>
+            <BottomNavigation sx={{ m: 3,}} sx={{ backgroundColor: "rgb(83 82 84)" }}>
                 {
                     starterNums.map((num, id) => (
-                        <button value={num} onClick={onClickHandler} key={id}>
+                        <Button variant="outlined" value={num} onClick={onClickHandler} key={id}>
                             {num}
-                        </button>
+                        </Button>
                     ))
                 }
-            </div>
-        </div>
+            </BottomNavigation>
+        </Paper>
+
     )
 }
 
