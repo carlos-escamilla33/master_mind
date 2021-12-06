@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
 const PlayerSelections = () => {
-    const { selectedNumbers, addHintNumbers, setSelectedNumbers, addPlayerGuess } = useContext(UserContext)
+    const { selectedNumbers, setSelectedNumbers, addPlayerGuess } = useContext(UserContext)
+
 
     const formSubmitHandler = (event) => {
         event.preventDefault();
-        addHintNumbers(selectedNumbers);
         addPlayerGuess(selectedNumbers);
         setSelectedNumbers([]);
     }
@@ -16,8 +16,8 @@ const PlayerSelections = () => {
             <h4>Current Selection</h4>
             <form onSubmit={formSubmitHandler}>
                 {
-                    selectedNumbers.map((selectedNum, id) => (
-                        <button className="number" key={id}>
+                    selectedNumbers.map((selectedNum, idx) => (
+                        <button key={idx}>
                             {selectedNum}
                         </button>
                     ))

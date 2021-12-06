@@ -1,27 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
-    const [winningNumbers, setWinningNumbers] = useState([]);
-    const [selectedNumbers, setSelectedNumbers] = useState([]);
-    const [hintNumbers, setHintNumbers] = useState([]);
-    const [playerGuesses, setPlayerGuesses] = useState([]);
+    const [winningNumbers, setWinningNumbers] = useState([]); //winning numbers sequence
+    const [selectedNumbers, setSelectedNumbers] = useState([]); //numbers selected by the user
+    const [playerGuess, setPlayerGuess] = useState([]);
     const starterNums = [0, 1, 2, 3, 4, 5, 6, 7];
-
-    const calculateHints = (numbers) => {
-        const hints = [];
-        numbers.forEach((num, idx) => {
-            if (winningNumbers[idx] === num) {
-                hints.push("full");
-            } else if (winningNumbers.includes(num)) {
-                hints.push("half")
-            } else {
-                hints.push("empty")
-            }
-        })
-        return hints;
-    }
 
     const shuffleHints = (hintsArr) => {
         for (let i = hintsArr.length - 1; i > 0; i--) {
@@ -33,17 +18,30 @@ const UserProvider = ({ children }) => {
         return hintsArr;
     }
 
-    const addHintNumbers = (hints) => {
-        const hintsArr = calculateHints(hints);
-        const finalHints = shuffleHints(hintsArr)
-        setHintNumbers((prevHints) => {
-            return [...prevHints, finalHints]
-        });
-    };
+    const checkGuess = (numbers) => {
+        const hints = [];
+        // const shuffledNums = shuffleHints(numbers);
+        numbers.forEach((num, idx) => {
+            if (winningNumbers[idx] === num) {
+                hints.push("full");
+            } else if (winningNumbers.includes(num)) {
+                hints.push("half")
+            } else {
+                hints.push("empty")
+            }
+        })
+        const shuffledHints = shuffleHints(hints);
+        const playerInfo = {
+            hints: shuffledHints,
+            guess: numbers
+        }
+        return playerInfo;
+    }
 
-    const addPlayerGuess = (guess) => {
-        setPlayerGuesses((prevGuesses) => {
-            return [...prevGuesses, guess];
+    const addPlayerGuess = (guessArray) => {
+        const guess = checkGuess(guessArray);
+        setPlayerGuess((prevGuesses) => {
+            return [...prevGuesses, guess]
         });
     };
 
@@ -52,15 +50,11 @@ const UserProvider = ({ children }) => {
             value={{
                 winningNumbers,
                 setWinningNumbers,
-                addHintNumbers,
                 selectedNumbers,
                 setSelectedNumbers,
-                hintNumbers,
-                setHintNumbers,
                 starterNums,
-                playerGuesses,
-                setPlayerGuesses,
-                addPlayerGuess
+                addPlayerGuess,
+                playerGuess
             }}
         >{children}</UserContext.Provider>
     )

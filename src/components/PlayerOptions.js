@@ -3,11 +3,13 @@ import { UserContext } from "../context/UserContext";
 
 const PlayerOptions = () => {
     const { setSelectedNumbers, starterNums } = useContext(UserContext);
+    
     const addSelectedNums = (number) => {
         setSelectedNumbers((prevNumbers) => {
             return [...prevNumbers, number]
         })
     }
+
     const onClickHandler = (event) => {
         const selectedNum = event.target.value
         addSelectedNums(selectedNum);

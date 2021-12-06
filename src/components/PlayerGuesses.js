@@ -4,29 +4,22 @@ import { Hints } from ".";
 import "./PlayerGuesses.css"
 
 const PlayerGuesses = () => {
-    const { playerGuesses, hintNumbers } = useContext(UserContext);
+    const { playerGuess } = useContext(UserContext);
+    console.log(playerGuess)
+
     return (
         <>
-            <div className="playerGuessContainer">
+            {/* <div className="playerGuessContainer">
                 {
-                    playerGuesses.map((guess, idx) => (
+                    playerInfo.map((guess, idx) => (
                         <>
                             <div key={idx}>
                                 {guess}
                             </div>
-                            <div className="hintsContainer">
-                                {
-                                    hintNumbers.map((hint, idx) => (
-                                        <div style={{ margin: "3px" }} key={idx}>
-                                            {hint}
-                                        </div>
-                                    ))
-                                }
-                            </div>
                         </>
                     ))
                 }
-            </div>
+            </div> */}
         </>
     )
 }
