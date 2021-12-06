@@ -1,29 +1,86 @@
 import React, { useContext } from "react";
 import { UserContext } from "../context/UserContext";
-import { Paper, Box, Grid } from "@mui/material";
+import { Paper, Box, Grid, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles"
+
+const useStyles = makeStyles(() => ({
+    box: {
+        flexGrow: 1,
+        overflow: 'hidden',
+        mx: 'auto',
+        px: 1,
+        backgroundColor: "rgb(23 20 26)",
+        marginTop: "5%",
+        maxWidth: "60%",
+        borderRadius: "20px"
+    },
+    paper: {
+        display: "flex",
+        justifyContent: "space-between",
+        borderRadius: "15px",
+    },
+    correct: {
+        backGroundColor: "black",
+        width: "40px",
+        borderRadius: "100px",
+        height: "20x"
+    },
+    almost: {
+        display: "flex",
+        backGroundColor: "white",
+        borderRadius: "40px",
+        width: "20px",
+        height: "20x"
+    }
+
+}))
 
 const PlayerGuesses = () => {
     const { playerGuess } = useContext(UserContext);
+    const classes = useStyles();
     return (
-        <Box sx={{ flexGrow: 1, overflow: 'hidden', px: 3, backgroundColor: "rgb(23 20 26)" }}>
+        <Box className={classes.box} sx={{ mx: "auto" }}>
             {
                 playerGuess.map((guesses, idx) => (
-                    <Paper sx={{ maxWidth: 500, my: 3, mx: 'auto', p: 5, backgroundColor: "rgb(83 82 84)" }} key={idx}>
-                        <Grid container wrap="nowrap" spacing={10}>
+                    <Paper key={idx} className={classes.paper} sx={{ maxWidth: "95%", my: 1, mx: 'auto', p: 2, backgroundColor: "rgb(83 82 84)" }}>
+                        <Grid container wrap="nowrap" spacing={{
+                            xs: 3,
+                            sm: 2,
+                            md: 8,
+                            lg: 10
+                        }}>
                             <Grid item>
-                                {idx + 1}
+                                <Typography variant="h5">{idx + 1}</Typography>
                             </Grid>
                             <Grid item>
-                                {guesses.guess}
+                                <Typography variant="h5">{guesses.guess}</Typography>
                             </Grid>
-                            <Grid item>
-                                {guesses.hints}
-                            </Grid>
+                            {guesses.hints.map((hint, idx) => {
+                                if (hint === "correct") {
+                                    return (<Grid item key={idx}>
+                                        <Box sx={{
+                                            width: 20,
+                                            height: 20,
+                                            backgroundColor: 'black',
+                                            borderRadius: 10
+                                        }} />
+                                    </Grid>)
+                                } else if (hint === "almost") {
+                                    return (<Grid item key={idx}>
+                                        <Box sx={{
+                                            width: 20,
+                                            height: 20,
+                                            backgroundColor: 'white',
+                                            borderRadius: 10
+                                        }} />
+                                    </Grid>)
+                                }
+                            })}
                         </Grid>
                     </Paper>
                 ))
             }
-        </Box>
+        </Box >
     )
 }
 
