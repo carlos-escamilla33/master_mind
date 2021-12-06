@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
 const PlayerSelections = () => {
-    const { selectedNumbers, setSelectedNumbers, addPlayerGuess } = useContext(UserContext)
+    const { selectedNumbers, setSelectedNumbers, addPlayerGuess, counter, setCounter} = useContext(UserContext)
 
 
     const formSubmitHandler = (event) => {
         event.preventDefault();
+
         addPlayerGuess(selectedNumbers);
+        setCounter(counter + 1);
         setSelectedNumbers([]);
     }
 

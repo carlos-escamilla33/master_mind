@@ -5,21 +5,16 @@ import "./PlayerGuesses.css"
 
 const PlayerGuesses = () => {
     const { playerGuess } = useContext(UserContext);
-    console.log(playerGuess)
-
     return (
         <>
-            {/* <div className="playerGuessContainer">
-                {
-                    playerInfo.map((guess, idx) => (
-                        <>
-                            <div key={idx}>
-                                {guess}
-                            </div>
-                        </>
-                    ))
-                }
-            </div> */}
+            {
+                playerGuess.map((guesses, idx) => (
+                    <div key={idx}>
+                        {guesses.guess}
+                        {guesses.hints}
+                    </div>
+                ))
+            }
         </>
     )
 }

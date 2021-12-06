@@ -6,7 +6,12 @@ const UserProvider = ({ children }) => {
     const [winningNumbers, setWinningNumbers] = useState([]); //winning numbers sequence
     const [selectedNumbers, setSelectedNumbers] = useState([]); //numbers selected by the user
     const [playerGuess, setPlayerGuess] = useState([]);
+    const [counter, setCounter] = useState(0);
     const starterNums = [0, 1, 2, 3, 4, 5, 6, 7];
+    console.log(counter);
+    if (counter === 10 && JSON.stringify(playerGuess) !== JSON.stringify(winningNumbers)) {
+        alert("You lost!");
+    }
 
     const shuffleHints = (hintsArr) => {
         for (let i = hintsArr.length - 1; i > 0; i--) {
@@ -20,22 +25,21 @@ const UserProvider = ({ children }) => {
 
     const checkGuess = (numbers) => {
         const hints = [];
-        // const shuffledNums = shuffleHints(numbers);
         numbers.forEach((num, idx) => {
             if (winningNumbers[idx] === num) {
-                hints.push("full");
+                hints.push("correct");
             } else if (winningNumbers.includes(num)) {
-                hints.push("half")
+                hints.push("almost")
             } else {
-                hints.push("empty")
+                hints.push("wrong")
             }
         })
         const shuffledHints = shuffleHints(hints);
-        const playerInfo = {
+        
+        return {
             hints: shuffledHints,
             guess: numbers
-        }
-        return playerInfo;
+        };
     }
 
     const addPlayerGuess = (guessArray) => {
@@ -54,7 +58,9 @@ const UserProvider = ({ children }) => {
                 setSelectedNumbers,
                 starterNums,
                 addPlayerGuess,
-                playerGuess
+                playerGuess,
+                setCounter,
+                counter
             }}
         >{children}</UserContext.Provider>
     )
