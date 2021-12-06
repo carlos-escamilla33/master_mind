@@ -2,19 +2,19 @@ import React from "react";
 import {
     PlayerOptions,
     PlayerSelections,
-    Hints,
-    WinningSequence
+    WinningSequence,
+    PlayerGuesses
 } from "./components";
 import "./App.css"
 
 const App = () => {
     return (
-        <div className="board">
+        <>
+            <PlayerGuesses />
             <WinningSequence />
             <PlayerSelections />
-            <Hints />
             <PlayerOptions />
-        </div>
+        </>
     )
 }
 
