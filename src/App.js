@@ -9,8 +9,8 @@ import {
 const App = () => {
     return (
         <>
-            <PlayerGuesses />
             <WinningSequence />
+            <PlayerGuesses />
             <PlayerSelections />
             <PlayerOptions />
         </>
