@@ -8,21 +8,6 @@ const UserProvider = ({ children }) => {
     const [hintNumbers, setHintNumbers] = useState([]);
     const [playerGuesses, setPlayerGuesses] = useState([]);
     const starterNums = [0, 1, 2, 3, 4, 5, 6, 7];
-    console.log("HINTNUMS --->", hintNumbers[hintNumbers.length - 1]);
-
-    const addPlayerGuess = (guess) => {
-        setPlayerGuesses((prevGuesses) => {
-            return [...prevGuesses, guess];
-        });
-    };
-
-    const addHintNumbers = (hints) => {
-        const hintsArr = calculateHints(hints);
-        const finalHints = shuffleHints(hintsArr)
-        setHintNumbers((prevHints) => {
-            return [finalHints, ...prevHints]
-        });
-    };
 
     const calculateHints = (numbers) => {
         const hints = [];
@@ -47,6 +32,20 @@ const UserProvider = ({ children }) => {
         }
         return hintsArr;
     }
+
+    const addHintNumbers = (hints) => {
+        const hintsArr = calculateHints(hints);
+        const finalHints = shuffleHints(hintsArr)
+        setHintNumbers((prevHints) => {
+            return [...prevHints, finalHints]
+        });
+    };
+
+    const addPlayerGuess = (guess) => {
+        setPlayerGuesses((prevGuesses) => {
+            return [...prevGuesses, guess];
+        });
+    };
 
     return (
         <UserContext.Provider

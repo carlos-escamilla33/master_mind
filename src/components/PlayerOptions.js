@@ -2,11 +2,15 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
 
 const PlayerOptions = () => {
-    const { selectedNumbers, setSelectedNumbers, starterNums } = useContext(UserContext);
-
+    const { setSelectedNumbers, starterNums } = useContext(UserContext);
+    const addSelectedNums = (number) => {
+        setSelectedNumbers((prevNumbers) => {
+            return [...prevNumbers, number]
+        })
+    }
     const onClickHandler = (event) => {
         const selectedNum = event.target.value
-        setSelectedNumbers([...selectedNumbers, selectedNum])
+        addSelectedNums(selectedNum);
     };
     return (
         <div>

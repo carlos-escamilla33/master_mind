@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../context/UserContext";
 import getRandomNums from "../randomApi/randomApi";
-import { NumberOptions } from ".";
 
 const WinningSequence = () => {
     const { winningNumbers, setWinningNumbers } = useContext(UserContext);
@@ -19,7 +18,7 @@ const WinningSequence = () => {
 
     useEffect(() => {
         randomNums();
-    }, [])
+    }, []);
 
     return (
         <>

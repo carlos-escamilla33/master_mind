@@ -3,10 +3,10 @@
 .hintsContainer
  {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
 } 
-
 .hintsContainer {
     align-items: center;
+    justify-content: flex-start;
     background-color: green;
 }
