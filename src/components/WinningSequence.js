@@ -26,7 +26,7 @@ const WinningSequence = () => {
             <h4>Winning Sequence</h4>
             <div>
                 {
-                    winningNumbers.length > 0 ? sequence.map((num, id) => {
+                    winningNumbers.length > 0 ? winningNumbers.map((num, id) => {
                         return (
                             <div key={id}>
                                 {num}

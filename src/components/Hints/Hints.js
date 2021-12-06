@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 const Hints = () => {
-    const { hintNumbers, sequence } = useContext(UserContext);
+    const { selectedNumbers, winningNumbers } = useContext(UserContext);
     const calculateHints = (numbers) => {
         const hints = [];
 
         numbers.forEach((num, idx) => {
-            if (sequence[idx] === num) {
+            if (winningNumbers[idx] === num) {
                 hints.push("full");
-            } else if (sequence.includes(num)) {
+            } else if (winningNumbers.includes(num)) {
                 hints.push("half")
             } else {
                 hints.push("empty")
@@ -17,7 +17,7 @@ const Hints = () => {
 
         return hints;
     }
-    const hintsArray = calculateHints(hintNumbers);
+    const hintsArray = calculateHints(selectedNumbers);
     console.log("ORIGINAL", hintsArray)
 
     const shuffleHints = (hintsArr) => {
@@ -38,7 +38,10 @@ const Hints = () => {
             <div>
                 {
                     shuffledHintArr.map((hintNumClass, id) => (
-                        <div className={hintNumClass} key={id}>
+                        <div key={id}>
+                            {
+                                hintNumClass
+                            }
                         </div>
                     ))
                 }
