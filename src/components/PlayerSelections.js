@@ -8,7 +8,7 @@ const useStyles = makeStyles(() => ({
         display: "flex",
         justifyContent: "center",
         marginBottom: "20%",
-        marginTop: "5%"
+        marginTop: "5%",
     }
 }))
 
@@ -32,7 +32,7 @@ const PlayerSelections = () => {
         <div>
             <form onSubmit={formSubmitHandler} className={classes.formContainer}>
                 {
-                    selectedNumbers.map((selectedNum, idx) => (
+                   selectedNumbers.map((selectedNum, idx) => (
                         <Button variant="outlined" style={{color: "white"}} key={idx}>
                             {selectedNum}
                         </Button>
