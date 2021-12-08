@@ -3,9 +3,17 @@ import { UserContext } from "../context/UserContext";
 import { Button, BottomNavigation, Paper, Typography, BottomNavigationAction } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 
+const useStyles = makeStyles(() => ({
+    paper: {
+        display: "flex",
+        justifyContent: "space-evenly",
+        padding: "40px"
+    },
+}));
+
 const PlayerOptions = () => {
     const { setSelectedNumbers, starterNums } = useContext(UserContext);
-
+    const classes = useStyles();
     const addSelectedNums = (number) => {
         setSelectedNumbers((prevNumbers) => {
             return [...prevNumbers, number]
@@ -18,11 +26,13 @@ const PlayerOptions = () => {
     };
 
     return (
-        <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor: "rgb(83 82 84)" }}>
+        <Paper className={classes.paper} sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor: "black" }}>
                 {
                     starterNums.map((num, id) => (
                         <Button
-                            variant="contained"
+                            className={classes.button}
+                            variant="outlined"
+                            size={"large"}
                             value={num}
                             onClick={onClickHandler}
                             key={id}
