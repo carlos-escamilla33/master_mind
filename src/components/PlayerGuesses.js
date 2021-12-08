@@ -10,13 +10,13 @@ const useStyles = makeStyles(() => ({
         mx: 'auto',
         px: 1,
         backgroundColor: "rgb(23 20 26)",
-        marginTop: "5%",
+        marginTop: "3%",
         maxWidth: "60%",
         borderRadius: "20px"
     },
     paper: {
         display: "flex",
-        justifyContent: "space-between",
+        justifyContent: "space-evenly",
         borderRadius: "15px",
     },
     correct: {
@@ -44,16 +44,16 @@ const PlayerGuesses = () => {
                 playerGuess.map((guesses, idx) => (
                     <Paper key={idx} className={classes.paper} sx={{ maxWidth: "95%", my: 1, mx: 'auto', p: 2, backgroundColor: "rgb(83 82 84)" }}>
                         <Grid container wrap="nowrap" spacing={{
-                            xs: 3,
-                            sm: 2,
-                            md: 8,
-                            lg: 10
+                            xs: 2,
+                            sm: 4,
+                            md: 7,
+                            lg: 12
                         }}>
                             <Grid item>
-                                <Typography variant="h5">{idx + 1}</Typography>
+                                <Typography variant="h4">{idx + 1}</Typography>
                             </Grid>
                             <Grid item>
-                                <Typography variant="h5">{guesses.guess}</Typography>
+                                <Typography variant="h4">{guesses.guess}</Typography>
                             </Grid>
                             {guesses.hints.map((hint, idx) => {
                                 if (hint === "correct") {

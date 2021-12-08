@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
         justifyContent: "center",
         marginLeft: "30%",
         marginRight: "20%",
-        marginTop: "10%",
+        marginTop: "5%",
         width: "40%",
     },
     lock: {

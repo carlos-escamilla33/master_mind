@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { UserContext } from "../context/UserContext";
-import { Button, BottomNavigation, Paper, Typography, BottomNavigationAction } from "@mui/material";
+import { Button, Paper, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 
 const useStyles = makeStyles(() => ({
@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const PlayerOptions = () => {
-    const { setSelectedNumbers, starterNums } = useContext(UserContext);
+    const { setSelectedNumbers, starterNums, selectedNumbers } = useContext(UserContext);
     const classes = useStyles();
     const addSelectedNums = (number) => {
         setSelectedNumbers((prevNumbers) => {
@@ -27,7 +27,8 @@ const PlayerOptions = () => {
 
     return (
         <Paper className={classes.paper} sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor: "black" }}>
-                {
+            {
+                selectedNumbers.length !== 4 ?
                     starterNums.map((num, id) => (
                         <Button
                             className={classes.button}
@@ -36,10 +37,11 @@ const PlayerOptions = () => {
                             value={num}
                             onClick={onClickHandler}
                             key={id}
-                            ><Typography>{num}</Typography>
+                        ><Typography>{num}</Typography>
                         </Button>
-                    ))
-                }
+                    )) :
+                    <Typography variant="h3" style={{ color: "white" }}>Submit Your Guess! 😊</Typography>
+            }
         </Paper>
 
     )

@@ -7,7 +7,7 @@ const useStyles = makeStyles(() => ({
     formContainer: {
         display: "flex",
         justifyContent: "center",
-        marginBottom: "20%",
+        marginBottom: "40%",
         marginTop: "5%",
     }
 }))
