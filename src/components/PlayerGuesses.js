@@ -11,6 +11,7 @@ const useStyles = makeStyles(() => ({
         px: 1,
         backgroundColor: "rgb(23 20 26)",
         marginTop: "3%",
+        marginBottom: "20%",
         maxWidth: "60%",
         borderRadius: "20px"
     },
@@ -38,6 +39,7 @@ const useStyles = makeStyles(() => ({
 const PlayerGuesses = () => {
     const { playerGuess } = useContext(UserContext);
     const classes = useStyles();
+
     return (
         <Box className={classes.box} sx={{ mx: "auto" }}>
             {

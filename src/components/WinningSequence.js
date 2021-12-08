@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../context/UserContext";
 import getRandomNums from "../randomApi/randomApi";
-import { Box, CircularProgress } from "@mui/material";
+import { Box, CircularProgress, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 import LockIcon from '@mui/icons-material/Lock';
 import { textAlign } from "@mui/system";
@@ -53,7 +53,10 @@ const WinningSequence = () => {
                         textAlign: "center"
                     }}><LockIcon color="primary" fontSize="large" style={{ color: "white", marginTop: "1%" }} /></Box>
                     :
-                    <CircularProgress color="primary" size={70} />
+                    <div style={{ position: 'relative' }}>
+                        <span style={{ position: 'absolute', top: '10px', left: '2px', color: "white" }}>Winning Numbers...</span>
+                        <CircularProgress size={75} />
+                    </div>
             }
         </div>
     )

@@ -10,8 +10,8 @@ const App = () => {
     return (
         <>
             <WinningSequence />
-            <PlayerGuesses />
             <PlayerSelections />
+            <PlayerGuesses />
             <PlayerOptions />
         </>
     )

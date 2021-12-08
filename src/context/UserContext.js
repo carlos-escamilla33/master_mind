@@ -9,11 +9,9 @@ const UserProvider = ({ children }) => {
     const [counter, setCounter] = useState(0);
     const starterNums = [0, 1, 2, 3, 4, 5, 6, 7];
     console.log("WinningNums--->",winningNumbers)
+    console.log("Player Guess---->", playerGuess.hints)
     console.log(selectedNumbers)
     console.log(counter);
-    if (counter === 10 && JSON.stringify(playerGuess) !== JSON.stringify(winningNumbers)) {
-        alert("You lost!");
-    }
 
     const shuffleHints = (hintsArr) => {
         for (let i = hintsArr.length - 1; i > 0; i--) {
@@ -55,6 +53,7 @@ const UserProvider = ({ children }) => {
         <UserContext.Provider
             value={{
                 winningNumbers,
+                setPlayerGuess,
                 setWinningNumbers,
                 selectedNumbers,
                 setSelectedNumbers,
