@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
-import { Button } from "@mui/material";
+import { Button, Box, Fade } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 
 const useStyles = makeStyles(() => ({
@@ -29,25 +29,30 @@ const PlayerSelections = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={formSubmitHandler} className={classes.formContainer}>
+        <form onSubmit={formSubmitHandler} className={classes.formContainer}>
+            {
+                selectedNumbers.map((selectedNum, idx) => (
+                    <Box sx={{ display: 'flex' }}>
+                        <Fade in={true}>
+                            <Button
+                                variant="outlined"
+                                style={{ color: "white", transitionDelay: '600ms' }}
+                                key={idx}>
+                                {selectedNum}
+                            </Button>
+                        </Fade>
+                    </Box>
+                ))
+            }
+            <div>
                 {
-                   selectedNumbers.map((selectedNum, idx) => (
-                        <Button variant="outlined" style={{color: "white"}} key={idx}>
-                            {selectedNum}
-                        </Button>
-                    ))
+                    selectedNumbers.length > 0 ?
+                        <Button variant="contained" type="submit">Submit</Button>
+                        :
+                        null
                 }
-                <div>
-                    {
-                        selectedNumbers.length > 0 ?
-                            <Button variant="contained" type="submit">Submit</Button>
-                            :
-                            null
-                    }
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
     )
 }
 

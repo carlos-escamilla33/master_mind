@@ -40,7 +40,7 @@ const PlayerOptions = () => {
                         ><Typography>{num}</Typography>
                         </Button>
                     )) :
-                    <Typography variant="h3" style={{ color: "white" }}>Submit Your Guess! 😊</Typography>
+                    <Typography variant="h4" style={{ color: "white" }}>Submit Your Guess! 😊</Typography>
             }
         </Paper>
 
