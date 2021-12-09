@@ -20,7 +20,7 @@ https://mastermindproject.netlify.app
 
 ## 🌐 API Reference
 
-#### Used Random integer generator API (https://www.random.org/clients/http/api/) to randomly select 4 numbers from 0 ~ 7 (Duplicate numbers were allowed)
+#### Used Random Integer Generator API (https://www.random.org/clients/http/api/) to randomly select 4 numbers from 0 ~ 7 (Duplicate numbers were allowed)
 
 GET A plain text response, with one integer per line. 
 (if col parameter is set to 1 and format is set to plain)
