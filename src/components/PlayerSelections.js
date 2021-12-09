@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
         justifyContent: "center",
         marginTop: "2%",
     },
-    form: {
+    formSize: {
         height: "60px"
     },
     buttonSize: {
@@ -36,7 +36,7 @@ const PlayerSelections = () => {
 
     return (
         <Box className={classes.boxContainer}>
-            <form onSubmit={formSubmitHandler} className={classes.form}>
+            <form onSubmit={formSubmitHandler} className={classes.formSize}>
                 {
                     selectedNumbers.map((selectedNum, idx) => (
                         <Fade in={true} key={idx}>

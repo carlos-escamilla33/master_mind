@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { UserContext } from "../context/UserContext";
-import { Button, Paper, Typography } from "@mui/material";
+import { Button, Paper, Typography, Fade } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 
 const useStyles = makeStyles(() => ({
     paper: {
         display: "flex",
         justifyContent: "space-evenly",
-        padding: "40px"
+        padding: "35px"
     },
 }));
 
@@ -29,16 +29,18 @@ const PlayerOptions = () => {
         <Paper className={classes.paper} sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor: "black" }}>
             {
                 selectedNumbers.length !== 4 ?
-                    starterNums.map((num, id) => (
-                        <Button
-                            className={classes.button}
-                            variant="outlined"
-                            size={"large"}
-                            value={num}
-                            onClick={onClickHandler}
-                            key={id}
-                        ><Typography>{num}</Typography>
-                        </Button>
+                    starterNums.map((num, idx) => (
+                        <Fade in={true} key={idx}>
+                            <Button
+                                className={classes.button}
+                                style={{ color: "white" }}
+                                variant="outlined"
+                                size={"large"}
+                                value={num}
+                                onClick={onClickHandler}
+                            ><Typography variant="h5">{num}</Typography>
+                            </Button>
+                        </Fade>
                     )) :
                     <Typography variant="h4" style={{ color: "white" }}>Submit Your Guess! 😊</Typography>
             }
