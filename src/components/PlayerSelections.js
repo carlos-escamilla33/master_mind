@@ -1,15 +1,21 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
-import { Button, Box, Fade } from "@mui/material";
+import { Button, Box, Fade, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 
 const useStyles = makeStyles(() => ({
-    formContainer: {
+    boxContainer: {
         display: "flex",
         justifyContent: "center",
-        // marginBottom: "40%",
-        marginTop: "5%",
-    }
+        marginTop: "2%",
+    },
+    form: {
+        height: "60px"
+    },
+    buttonSize: {
+        width: "80px",
+        height: "55px"
+    },
 }))
 
 const PlayerSelections = () => {
@@ -17,8 +23,8 @@ const PlayerSelections = () => {
         setSelectedNumbers,
         addPlayerGuess,
         counter,
-        setCounter } = useContext(UserContext)
-    const classes = useStyles()
+        setCounter } = useContext(UserContext);
+    const classes = useStyles();
 
     const formSubmitHandler = (event) => {
         event.preventDefault();
@@ -29,30 +35,34 @@ const PlayerSelections = () => {
     }
 
     return (
-        <form onSubmit={formSubmitHandler} className={classes.formContainer}>
-            {
-                selectedNumbers.map((selectedNum, idx) => (
-                    <Box sx={{ display: 'flex' }}>
-                        <Fade in={true}>
+        <Box className={classes.boxContainer}>
+            <form onSubmit={formSubmitHandler} className={classes.form}>
+                {
+                    selectedNumbers.map((selectedNum, idx) => (
+                        <Fade in={true} key={idx}>
                             <Button
+                                className={classes.buttonSize}
                                 variant="outlined"
-                                style={{ color: "white", transitionDelay: '600ms' }}
+                                style={{ color: "white", transitionDelay: '600ms', margin: "5px" }}
                                 key={idx}>
-                                {selectedNum}
+                                <Typography variant={"h3"}>{selectedNum}</Typography>
                             </Button>
                         </Fade>
-                    </Box>
-                ))
-            }
-            <div>
+                    ))
+                }
                 {
-                    selectedNumbers.length > 0 ?
-                        <Button variant="contained" type="submit">Submit</Button>
+                    selectedNumbers.length === 4 ?
+                        <Button
+                            sx={{ borderRadius: 10 }}
+                            className={classes.buttonSize}
+                            variant="outlined"
+                            type="submit"><Typography variant={"h3"}>?</Typography>
+                        </Button>
                         :
                         null
                 }
-            </div>
-        </form>
+            </form>
+        </Box>
     )
 }
 
