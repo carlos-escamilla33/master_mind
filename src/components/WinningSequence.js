@@ -23,7 +23,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 const WinningSequence = () => {
-    const { winningNumbers, setWinningNumbers } = useContext(UserContext);
+    const { winningNumbers, setWinningNumbers, playerGuess } = useContext(UserContext);
     const classes = useStyles();
 
     const randomNums = async () => {
@@ -38,8 +38,10 @@ const WinningSequence = () => {
     }
 
     useEffect(() => {
-        randomNums();
-    }, []);
+        if (playerGuess.length === 0) {
+            randomNums();
+        }
+    }, [playerGuess]);
 
     return (
         <div className={classes.numbers}>

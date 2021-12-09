@@ -9,7 +9,6 @@ const UserProvider = ({ children }) => {
     const [counter, setCounter] = useState(0);
     const starterNums = [0, 1, 2, 3, 4, 5, 6, 7];
     console.log("WinningNums--->",winningNumbers)
-    console.log("Player Guess---->", playerGuess.hints)
     console.log(selectedNumbers)
     console.log(counter);
 

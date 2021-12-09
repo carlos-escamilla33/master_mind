@@ -23,15 +23,28 @@ const PlayerSelections = () => {
         setSelectedNumbers,
         addPlayerGuess,
         counter,
-        setCounter } = useContext(UserContext);
+        setCounter,
+        setPlayerGuess,
+        winningNumbers } = useContext(UserContext);
     const classes = useStyles();
 
     const formSubmitHandler = (event) => {
         event.preventDefault();
-
-        addPlayerGuess(selectedNumbers);
-        setCounter(counter + 1);
-        setSelectedNumbers([]);
+        if (JSON.stringify(selectedNumbers) === JSON.stringify(winningNumbers)) {
+            setCounter(0);
+            setSelectedNumbers([])
+            setPlayerGuess([]);
+            alert("You win!")
+        } else if (counter === 9) {
+            setCounter(0);
+            setSelectedNumbers([])
+            setPlayerGuess([]);
+            alert("You lose!");
+        } else {
+            addPlayerGuess(selectedNumbers);
+            setCounter(counter + 1);
+            setSelectedNumbers([]);
+        }
     }
 
     return (

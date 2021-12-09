@@ -43,44 +43,46 @@ const PlayerGuesses = () => {
     return (
         <Box className={classes.box} sx={{ mx: "auto" }}>
             {
-                playerGuess.map((guesses, idx) => (
-                    <Paper key={idx} className={classes.paper} sx={{ maxWidth: "95%", my: 1, mx: 'auto', p: 2, backgroundColor: "rgb(83 82 84)" }}>
-                        <Grid container wrap="nowrap" spacing={{
-                            xs: 2,
-                            sm: 4,
-                            md: 7,
-                            lg: 12
-                        }}>
-                            <Grid item>
-                                <Typography variant="h4">{idx + 1}</Typography>
+                playerGuess.length === 0 ? null
+                    :
+                    playerGuess.map((guesses, idx) => (
+                        <Paper key={idx} className={classes.paper} sx={{ maxWidth: "95%", my: 1, mx: 'auto', p: 2, backgroundColor: "rgb(83 82 84)" }}>
+                            <Grid container wrap="nowrap" spacing={{
+                                xs: 2,
+                                sm: 4,
+                                md: 7,
+                                lg: 12
+                            }}>
+                                <Grid item>
+                                    <Typography variant="h4">{idx + 1}</Typography>
+                                </Grid>
+                                <Grid item>
+                                    <Typography variant="h4">{guesses.guess}</Typography>
+                                </Grid>
+                                {guesses.hints.map((hint, idx) => {
+                                    if (hint === "correct") {
+                                        return (<Grid item key={idx}>
+                                            <Box sx={{
+                                                width: 20,
+                                                height: 20,
+                                                backgroundColor: 'black',
+                                                borderRadius: 10
+                                            }} />
+                                        </Grid>)
+                                    } else if (hint === "almost") {
+                                        return (<Grid item key={idx}>
+                                            <Box sx={{
+                                                width: 20,
+                                                height: 20,
+                                                backgroundColor: 'white',
+                                                borderRadius: 10
+                                            }} />
+                                        </Grid>)
+                                    }
+                                })}
                             </Grid>
-                            <Grid item>
-                                <Typography variant="h4">{guesses.guess}</Typography>
-                            </Grid>
-                            {guesses.hints.map((hint, idx) => {
-                                if (hint === "correct") {
-                                    return (<Grid item key={idx}>
-                                        <Box sx={{
-                                            width: 20,
-                                            height: 20,
-                                            backgroundColor: 'black',
-                                            borderRadius: 10
-                                        }} />
-                                    </Grid>)
-                                } else if (hint === "almost") {
-                                    return (<Grid item key={idx}>
-                                        <Box sx={{
-                                            width: 20,
-                                            height: 20,
-                                            backgroundColor: 'white',
-                                            borderRadius: 10
-                                        }} />
-                                    </Grid>)
-                                }
-                            })}
-                        </Grid>
-                    </Paper>
-                ))
+                        </Paper>
+                    ))
             }
         </Box >
     )
