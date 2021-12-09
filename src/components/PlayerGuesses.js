@@ -21,25 +21,7 @@ const useStyles = makeStyles(() => ({
     paper: {
         display: "flex",
         justifyContent: "space-evenly"
-    },
-    correct: {
-        backGroundColor: "black",
-        width: "40px",
-        borderRadius: "100px",
-        height: "20x"
-    },
-    almost: {
-        backGroundColor: "white",
-        borderRadius: "40px",
-        width: "20px",
-        height: "20x"
-    },
-    wrong: {
-        backGroundColor: "red",
-        borderRadius: "40px",
-        width: "20px",
-        height: "20x"
-    },
+    }
 
 }))
 
@@ -54,7 +36,6 @@ const PlayerGuesses = () => {
                     :
                     playerGuess.map((guesses, idx) => (
                         <Paper key={idx} className={classes.paper} sx={{
-                            maxWidth: "90%",
                             my: 1,
                             mx: 'auto',
                             p: 2,
@@ -77,6 +58,7 @@ const PlayerGuesses = () => {
                                     if (hint === "correct") {
                                         return (<Grid item key={idx}>
                                             <Box sx={{
+                                                marginTop:"25%",
                                                 width: 20,
                                                 height: 20,
                                                 backgroundColor: 'black',
@@ -86,6 +68,7 @@ const PlayerGuesses = () => {
                                     } else if (hint === "almost") {
                                         return (<Grid item key={idx}>
                                             <Box sx={{
+                                                marginTop:"25%",
                                                 width: 20,
                                                 height: 20,
                                                 backgroundColor: 'white',
@@ -95,6 +78,7 @@ const PlayerGuesses = () => {
                                     } else {
                                         return (<Grid item key={idx}>
                                             <Box sx={{
+                                                marginTop:"25%",
                                                 width: 20,
                                                 height: 20,
                                                 backgroundColor: '#1776d1',
