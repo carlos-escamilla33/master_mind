@@ -12,12 +12,8 @@ const useStyles = makeStyles(() => ({
         justifyContent: "center",
         marginLeft: "30%",
         marginRight: "20%",
-        marginTop: "5%",
+        marginTop: "1%",
         width: "40%",
-    },
-    lock: {
-        color: "white",
-        marginTop: "3%"
     }
 }))
 

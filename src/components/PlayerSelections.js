@@ -38,13 +38,13 @@ const PlayerSelections = () => {
             setCounter(0);
             setSelectedNumbers([])
             setPlayerGuess([]);
-            alert("You win!")
+            alert(`You guessed correctly! Your guess: ${winningNumbers}`)
         } else if (counter === 9) {
             setIsLoading(true)
             setCounter(0);
             setSelectedNumbers([])
             setPlayerGuess([]);
-            alert("You lose!");
+            alert(`You lose! The correct numbers were: ${winningNumbers}`);
         } else {
             addPlayerGuess(selectedNumbers);
             setCounter(counter + 1);

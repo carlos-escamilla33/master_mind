@@ -6,7 +6,7 @@ import { PlayerRounds } from ".";
 const useStyles = makeStyles(() => ({
     directionsContainer: {
         display: "flex",
-        justifyContent: "space-evenly",
+        justifyContent: "space-around",
         marginTop: "2%",
     },
     directionsButton: {
@@ -31,11 +31,11 @@ const Directions = () => {
     return (
         <>
             <div className={classes.directionsContainer}>
-                <Button 
-                className={classes.directionsButton}
-                aria-describedby={id} 
-                variant="contained" 
-                onClick={buttonClickHandler}>
+                <Button
+                    className={classes.directionsButton}
+                    aria-describedby={id}
+                    variant="contained"
+                    onClick={buttonClickHandler}>
                     Game Directions
                 </Button>
                 <Popover
@@ -57,6 +57,9 @@ const Directions = () => {
                         </div>
                         <div>
                             ⚪  One number is misplaced.
+                        </div>
+                        <div>
+                            🔵  One number is wrong.
                         </div>
                     </Box>
                 </Popover>
