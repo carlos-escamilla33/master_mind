@@ -6,7 +6,7 @@ import { makeStyles } from "@mui/styles"
 import LockIcon from '@mui/icons-material/Lock';
 
 const useStyles = makeStyles(() => ({
-    numbers: {
+    loading: {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -40,7 +40,7 @@ const WinningSequence = () => {
     }, [playerGuess]);
 
     return (
-        <div className={classes.numbers}>
+        <div className={classes.loading}>
             {
                 isLoading ?
                     <div style={{ position: 'relative' }}>

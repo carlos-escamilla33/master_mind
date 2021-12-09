@@ -3,7 +3,7 @@ import { UserContext } from "../context/UserContext";
 import { Button, Box, Fade, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     boxContainer: {
         display: "flex",
         justifyContent: "center",
@@ -14,7 +14,11 @@ const useStyles = makeStyles(() => ({
     },
     buttonSize: {
         width: "80px",
-        height: "55px"
+        height: "55px",
+        [theme.breakpoints.up('xs')]: {
+            width: "25px",
+            height: "50px",
+        }
     },
 }))
 
@@ -27,7 +31,7 @@ const PlayerSelections = () => {
         setPlayerGuess,
         winningNumbers,
         setIsLoading
-     } = useContext(UserContext);
+    } = useContext(UserContext);
     const classes = useStyles();
 
     const formSubmitHandler = (event) => {

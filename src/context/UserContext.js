@@ -9,6 +9,7 @@ const UserProvider = ({ children }) => {
     const [playerGuess, setPlayerGuess] = useState([]);
     const [counter, setCounter] = useState(0);
     const starterNums = [0, 1, 2, 3, 4, 5, 6, 7];
+    console.log(winningNumbers)
 
     const shuffleHints = (hintsArr) => {
         for (let i = hintsArr.length - 1; i > 0; i--) {

@@ -3,12 +3,26 @@ import { UserContext } from "../context/UserContext";
 import { Button, Paper, Typography, Fade } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     paper: {
         display: "flex",
-        justifyContent: "space-evenly",
-        padding: "35px"
+        padding: "35px",
+        [theme.breakpoints.up('xs')]: {
+            justifyContent: "center",
+            flexWrap: "wrap"
+        },
+        [theme.breakpoints.up('sm')]: {
+            justifyContent: "space-evenly",
+        },
+        [theme.breakpoints.up('md')]: {
+            justifyContent: "space-evenly",
+        }
     },
+    button: {
+        [theme.breakpoints.up('xs')]: {
+            marginTop: "100px"
+        }
+    }
 }));
 
 const PlayerOptions = () => {

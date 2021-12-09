@@ -4,7 +4,7 @@ import { Paper, Box, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 import { borderRadius } from "@mui/system";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     box: {
         display: "flex",
         flexDirection: "column-reverse",
@@ -14,9 +14,16 @@ const useStyles = makeStyles(() => ({
         px: 1,
         backgroundColor: "rgb(23 20 26)",
         marginTop: "3%",
-        marginBottom: "20%",
-        maxWidth: "50%",
-        borderRadius: "25px"
+        borderRadius: "25px",
+        [theme.breakpoints.up('xs')]: {
+            maxWidth: "70%",
+            height: "40%",
+            marginBottom: "40%",
+        },
+        [theme.breakpoints.up('sm')]: {
+            maxWidth: "50%",
+            marginBottom: "15%",
+        },
     },
     paper: {
         display: "flex",
