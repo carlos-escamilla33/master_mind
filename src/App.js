@@ -3,12 +3,14 @@ import {
     PlayerOptions,
     PlayerSelections,
     WinningSequence,
-    PlayerGuesses
+    PlayerGuesses,
+    Directions
 } from "./components";
 
 const App = () => {
     return (
         <>
+            <Directions />
             <WinningSequence />
             <PlayerSelections />
             <PlayerGuesses />
