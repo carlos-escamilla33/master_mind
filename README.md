@@ -25,6 +25,7 @@ https://mastermindproject.netlify.app
 GET A plain text response, with one integer per line. 
 (if col parameter is set to 1 and format is set to plain)
 >**Parameters below are already preset in project api call**
+>
 | URL Parameter | Recommended Value | purpose |
 | :-------- | :------- | :------------------------- |
 | `num` | `4` | Number of integers requested|
