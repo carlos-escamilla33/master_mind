@@ -40,6 +40,9 @@ const Directions = () => {
                         You must break the secret four number code in 10 guesses or less.
                     </div>
                     <div>
+                        Duplicate numbers could be included in the secret code.
+                    </div>
+                    <div>
                         ⚫ One number is on the correct spot.
                     </div>
                     <div>
