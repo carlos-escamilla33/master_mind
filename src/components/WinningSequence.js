@@ -1,10 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/UserContext";
 import getRandomNums from "../randomApi/randomApi";
 import { Box, CircularProgress, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 import LockIcon from '@mui/icons-material/Lock';
-import { textAlign } from "@mui/system";
 
 const useStyles = makeStyles(() => ({
     numbers: {
@@ -23,13 +22,14 @@ const useStyles = makeStyles(() => ({
 }))
 
 const WinningSequence = () => {
-    const { winningNumbers, setWinningNumbers, playerGuess } = useContext(UserContext);
+    const { isLoading, setIsLoading, setWinningNumbers, playerGuess } = useContext(UserContext);
     const classes = useStyles();
 
     const randomNums = async () => {
         try {
             const response = await getRandomNums();
             setWinningNumbers(response);
+            setIsLoading(false);
         }
         catch (error) {
             console.log(error);
@@ -46,7 +46,12 @@ const WinningSequence = () => {
     return (
         <div className={classes.numbers}>
             {
-                winningNumbers.length > 0 ?
+                isLoading ?
+                    <div style={{ position: 'relative' }}>
+                        <span style={{ position: 'absolute', top: '10px', left: '2px', color: "white" }}>Winning Numbers...</span>
+                        <CircularProgress size={75} />
+                    </div>
+                    :
                     <Box sx={{
                         width: 200,
                         height: 40,
@@ -54,11 +59,6 @@ const WinningSequence = () => {
                         borderRadius: "20px",
                         textAlign: "center"
                     }}><LockIcon color="primary" fontSize="large" style={{ color: "white", marginTop: "1%" }} /></Box>
-                    :
-                    <div style={{ position: 'relative' }}>
-                        <span style={{ position: 'absolute', top: '10px', left: '2px', color: "white" }}>Winning Numbers...</span>
-                        <CircularProgress size={75} />
-                    </div>
             }
         </div>
     )

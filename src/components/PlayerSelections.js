@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
         marginTop: "2%",
     },
     formSize: {
-        height: "60px"
+        height: "50px"
     },
     buttonSize: {
         width: "80px",
@@ -25,17 +25,22 @@ const PlayerSelections = () => {
         counter,
         setCounter,
         setPlayerGuess,
-        winningNumbers } = useContext(UserContext);
+        winningNumbers,
+        setIsLoading
+     } = useContext(UserContext);
     const classes = useStyles();
 
     const formSubmitHandler = (event) => {
         event.preventDefault();
+
         if (JSON.stringify(selectedNumbers) === JSON.stringify(winningNumbers)) {
+            setIsLoading(true);
             setCounter(0);
             setSelectedNumbers([])
             setPlayerGuess([]);
             alert("You win!")
         } else if (counter === 9) {
+            setIsLoading(true)
             setCounter(0);
             setSelectedNumbers([])
             setPlayerGuess([]);
