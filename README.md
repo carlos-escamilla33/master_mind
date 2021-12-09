@@ -42,13 +42,13 @@ GET A plain text response, with one integer per line.
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone git@github.com:carlos-escamilla33/master_mind.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd master_mind
 ```
 
 Install dependencies
