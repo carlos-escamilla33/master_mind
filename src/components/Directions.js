@@ -53,6 +53,9 @@ const Directions = () => {
                             Duplicate numbers could be included in the secret code.
                         </div>
                         <div>
+                            Hints are shuffled every guess.
+                        </div>
+                        <div>
                             ⚫ One number is on the correct spot.
                         </div>
                         <div>

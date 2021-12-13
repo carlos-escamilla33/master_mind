@@ -13,6 +13,4 @@ const getRandomNums = async () => {
     }
 }
 
-console.log(getRandomNums());
-
 export default getRandomNums;
