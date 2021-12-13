@@ -5,7 +5,31 @@
 
 > The goal is to guess a secret code consisting of a series of 4 numbers
 
+## 🚀 Run Locally
 
+Clone the project
+
+```bash
+  git clone git@github.com:carlos-escamilla33/master_mind.git
+```
+
+Go to the project directory
+
+```bash
+  cd master_mind
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm start
+```
 
 
 ## 🛠️ Tech Used
@@ -35,33 +59,6 @@ GET A plain text response, with one integer per line.
 | `base` | `10` | Use base 10 system|
 | `format` | `plain` | Returns response in a plain text.|
 | `rnd` | `new` | Generate a new random numbers|
-
-
-## 🚀 Run Locally
-
-Clone the project
-
-```bash
-  git clone git@github.com:carlos-escamilla33/master_mind.git
-```
-
-Go to the project directory
-
-```bash
-  cd master_mind
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm start
-```
 
 
 ## 🙋‍♂️ Author
