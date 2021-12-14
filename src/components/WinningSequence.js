@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { UserContext } from "../context/UserContext";
 import getRandomNums from "../randomApi/randomApi";
-import { Box, CircularProgress, Typography } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 import LockIcon from '@mui/icons-material/Lock';
 
