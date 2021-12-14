@@ -17,7 +17,6 @@ const useStyles = makeStyles(() => ({
 const Directions = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
-    const id = open ? 'simple-popover' : undefined;
     const classes = useStyles();
 
     const buttonClickHandler = (event) => {
@@ -33,13 +32,11 @@ const Directions = () => {
             <div className={classes.directionsContainer}>
                 <Button
                     className={classes.directionsButton}
-                    aria-describedby={id}
                     variant="contained"
                     onClick={buttonClickHandler}>
                     Game Directions
                 </Button>
                 <Popover
-                    id={id}
                     open={open}
                     anchorEl={anchorEl}
                     onClose={buttonHandleClose}
