@@ -4,7 +4,8 @@ import {
     PlayerSelections,
     WinningSequence,
     PlayerGuesses,
-    Directions
+    Directions,
+    Home
 } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -12,7 +13,7 @@ const App = () => {
     return (
         <Router>
             <Routes>
-                <Route exact path="/"/>
+                <Route exact path="/" element={<Home />}/>
                 <Route path="/mastermind" element={
                     <>
                         <Directions />
