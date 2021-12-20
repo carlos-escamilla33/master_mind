@@ -1,8 +1,7 @@
 import React from "react";
-import { Typography, Box } from "@mui/material";
+import { Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 import { Link } from "react-router-dom";
-import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 const useStyles = makeStyles(() => ({
     homeContainer: {
@@ -12,28 +11,31 @@ const useStyles = makeStyles(() => ({
         alignItems: "center",
         minHeight: "100vh"
     },
-    startButton: {
-        padding: "40px",
-        color: "white",
-        backgroundColor: "black",
-        textAlign: "center",
-        width: "100px",
-        height: "50px",
+    startContainer: {
+        display: "flex",
+        padding: "10px",
         borderRadius: "15px",
-        textDecoration: "none"
+        justifyContent: "center",
+        backgroundColor: "black"
     },
-}))
+    link : {
+        textDecoration: "none",
+        color: "white"
+    }
+}));
 
 const Home = () => {
     const classes = useStyles();
     return (
         <div className={classes.homeContainer}>
             <div>
-                <Typography variant="h2">Matermind</Typography>
+                <Typography variant="h1">Mastermind</Typography>
             </div>
-            <Link className={classes.startButton} to="/mastermind">
-                <Typography variant="h4">Start</Typography>
-            </Link>
+            <div className={classes.startContainer}>
+                <Link className={classes.link} to="/mastermind">
+                    <Typography variant="h4">Start</Typography>
+                </Link>
+            </div>
         </div>
     )
 }
