@@ -3,6 +3,7 @@ import { Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 import { Link } from "react-router-dom";
 import { Footer } from ".";
+import sky from "../media/sky.jpg"
 
 const useStyles = makeStyles(() => ({
     homeContainer: {
@@ -11,7 +12,7 @@ const useStyles = makeStyles(() => ({
         justifyContent: "center",
         alignItems: "center",
         minHeight: "100vh",
-        backgroundColor: "yellow"
+        backgroundColor: "#B1A296"
     },
     startContainer: {
         display: "flex",
@@ -26,6 +27,10 @@ const useStyles = makeStyles(() => ({
     link: {
         textDecoration: "none",
         color: "white"
+    },
+    title: {
+        paddingBottom: "10%",
+        textAlign: "center"
     }
 }));
 
@@ -34,8 +39,19 @@ const Home = () => {
     return (
         <>
             <div className={classes.homeContainer}>
-                <div>
-                    <Typography variant="h2">Mastermind</Typography>
+                <div className={classes.title}>
+                    <Typography variant="h4">
+                        Welcome
+                    </Typography>
+                    <Typography variant="h3">
+                        to
+                    </Typography>
+                    <Typography variant="h2">
+                        Mastermind
+                    </Typography>
+                    <Typography variant="h2">
+                        🎮 🧠
+                    </Typography>
                 </div>
                 <div className={classes.startContainer}>
                     <Link className={classes.link} to="/mastermind">
