@@ -10,7 +10,8 @@ const useStyles = makeStyles(() => ({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: "100vh"
+        minHeight: "100vh",
+        backgroundColor: "yellow"
     },
     startContainer: {
         display: "flex",
