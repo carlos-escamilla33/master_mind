@@ -2,6 +2,7 @@ import React from "react";
 import { Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 import { Link } from "react-router-dom";
+import { Footer } from ".";
 
 const useStyles = makeStyles(() => ({
     homeContainer: {
@@ -21,7 +22,7 @@ const useStyles = makeStyles(() => ({
             backgroundColor: "#1776d1",
         }
     },
-    link : {
+    link: {
         textDecoration: "none",
         color: "white"
     }
@@ -30,16 +31,19 @@ const useStyles = makeStyles(() => ({
 const Home = () => {
     const classes = useStyles();
     return (
-        <div className={classes.homeContainer}>
-            <div>
-                <Typography variant="h2">Mastermind</Typography>
+        <>
+            <div className={classes.homeContainer}>
+                <div>
+                    <Typography variant="h2">Mastermind</Typography>
+                </div>
+                <div className={classes.startContainer}>
+                    <Link className={classes.link} to="/mastermind">
+                        <Typography variant="h4">Start</Typography>
+                    </Link>
+                </div>
             </div>
-            <div className={classes.startContainer}>
-                <Link className={classes.link} to="/mastermind">
-                    <Typography variant="h4">Start</Typography>
-                </Link>
-            </div>
-        </div>
+            <Footer />
+        </>
     )
 }
 

@@ -12,7 +12,7 @@ const theme = createTheme({
     typography: {
         fontFamily: [
             "Bungee",
-             "cursive",
+             "Roboto",
         ].join(",")
     }
 })
