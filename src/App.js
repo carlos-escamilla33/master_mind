@@ -7,11 +7,11 @@ import {
     Directions,
     Home
 } from "./components";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
     return (
-        <Router>
+        <BrowserRouter>
             <Routes>
                 <Route exact path="/" element={<Home />}/>
                 <Route path="/mastermind" element={
@@ -24,7 +24,7 @@ const App = () => {
                     </>
                 } />
             </Routes>
-        </Router>
+        </BrowserRouter>
     )
 }
 

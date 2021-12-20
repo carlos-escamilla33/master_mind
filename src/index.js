@@ -8,6 +8,12 @@ const theme = createTheme({
         background: {
             default: "rgb(36 36 36)"
         },
+    },
+    typography: {
+        fontFamily: [
+            "Bungee",
+             "cursive",
+        ].join(",")
     }
 })
 

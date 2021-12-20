@@ -13,10 +13,13 @@ const useStyles = makeStyles(() => ({
     },
     startContainer: {
         display: "flex",
-        padding: "10px",
+        padding: "15px",
         borderRadius: "15px",
         justifyContent: "center",
-        backgroundColor: "black"
+        backgroundColor: "black",
+        "&:hover": {
+            backgroundColor: "#1776d1",
+        }
     },
     link : {
         textDecoration: "none",
@@ -29,7 +32,7 @@ const Home = () => {
     return (
         <div className={classes.homeContainer}>
             <div>
-                <Typography variant="h1">Mastermind</Typography>
+                <Typography variant="h2">Mastermind</Typography>
             </div>
             <div className={classes.startContainer}>
                 <Link className={classes.link} to="/mastermind">
