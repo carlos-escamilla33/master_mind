@@ -11,6 +11,12 @@ const useStyles = makeStyles(() => ({
         display: "flex",
         justifyContent: "space-evenly",
         padding: "10px"
+    },
+    a: {
+        color: "black",
+        "&:hover": {
+            color: "#1776d1",
+        }
     }
 }))
 
@@ -18,13 +24,13 @@ const Footer = () => {
     const classes = useStyles();
     return (
         <Paper className={classes.footer} sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}>
-            <a href="https://www.linkedin.com/in/carlos-r-escamilla/">
+            <a className={classes.a} href="https://www.linkedin.com/in/carlos-r-escamilla/">
                 <LinkedInIcon fontSize="large"/>
             </a>
-            <a href="https://github.com/carlos-escamilla33/master_mind">
+            <a className={classes.a} href="https://github.com/carlos-escamilla33/master_mind">
                 <GitHubIcon fontSize="large"/>
             </a>
-            <a href="mailto:Crodriguezescamilla3@gmail.com">
+            <a className={classes.a} href="mailto:Crodriguezescamilla3@gmail.com">
                 <MailIcon fontSize="large"/>
             </a>
         </Paper>

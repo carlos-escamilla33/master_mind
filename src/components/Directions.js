@@ -53,6 +53,9 @@ const Directions = () => {
                             Hints are shuffled every guess.
                         </div>
                         <div>
+                            Click on the question mark to submit your guess after picking 4 numbers.
+                        </div>
+                        <div>
                             ⚫ One number is on the correct spot.
                         </div>
                         <div>
