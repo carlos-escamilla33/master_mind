@@ -1,9 +1,8 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 import { Link } from "react-router-dom";
 import { Footer } from ".";
-import sky from "../media/sky.jpg"
 
 const useStyles = makeStyles(() => ({
     homeContainer: {
@@ -12,7 +11,6 @@ const useStyles = makeStyles(() => ({
         justifyContent: "center",
         alignItems: "center",
         minHeight: "100vh",
-        backgroundColor: "#B1A296"
     },
     startContainer: {
         display: "flex",
@@ -28,7 +26,7 @@ const useStyles = makeStyles(() => ({
         textDecoration: "none",
         color: "white"
     },
-    title: {
+    titleContainer: {
         paddingBottom: "10%",
         textAlign: "center"
     }
@@ -39,14 +37,14 @@ const Home = () => {
     return (
         <>
             <div className={classes.homeContainer}>
-                <div className={classes.title}>
-                    <Typography variant="h4">
+                <div className={classes.titleContainer}>
+                    <Typography variant="h5" style={{color:"white"}}>
                         Welcome
                     </Typography>
-                    <Typography variant="h3">
+                    <Typography variant="h4" style={{color:"white"}}>
                         to
                     </Typography>
-                    <Typography variant="h2">
+                    <Typography variant="h3" style={{color:"white"}}>
                         Mastermind
                     </Typography>
                     <Typography variant="h2">
