@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import { UserContext } from "../context/UserContext";
-import { Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles"
-
 const useStyles = makeStyles(() => ({
     counterContainer: {
         textAlign: "center",
-        width: "150px",
+        width: "126px",
         borderRadius: "10px",
         backgroundColor: "black",
         color: "white",

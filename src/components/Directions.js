@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Popover, Button, Box } from "@mui/material";
+import { Popover, Button, Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 import { PlayerRounds } from ".";
 import { Link } from "react-router-dom";
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+
 
 const useStyles = makeStyles(() => ({
     directionsContainer: {
@@ -10,19 +12,24 @@ const useStyles = makeStyles(() => ({
         justifyContent: "space-evenly",
         marginTop: "2%",
     },
-    backButton: {
+    backLink: {
+        display: 'flex',
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "black",
+        width: "125px",
+        borderRadius: "10px",
+        textAlign: "center",
         backgroundColor: "black",
         "&:hover": {
             backgroundColor: "#0c0c0c",
             color: '#1776d1',
         },
-        padding: "7px",
-        width: "150px",
-        borderRadius: "10px",
-        textAlign: "center",
         color: "white",
         textDecoration: "none",
-        fontSize: "20px"
+    },
+    arrow: {
+        fontSize: "100px"
     }
 }))
 
@@ -40,11 +47,16 @@ const Directions = () => {
     }
 
     return (
-        <>
-            <div className={classes.directionsContainer}>
-                <Link className={classes.backButton} to="/">Back</Link>
+        <div className={classes.directionsContainer}>
+            <Link className={classes.backLink} to="/">
+                <Typography>
+                    <KeyboardBackspaceIcon fontSize="large"className={classes.arrow}/>
+                </Typography>
+            </Link>
+            <div>
                 <Button
-                    style={{borderRadius: "10px"}}
+                    style={{ height: "45px" }}
+                    size="medium"
                     variant="contained"
                     onClick={buttonClickHandler}>
                     Game Directions
@@ -79,9 +91,9 @@ const Directions = () => {
                         </div>
                     </Box>
                 </Popover>
-                <PlayerRounds />
             </div>
-        </>
+            <PlayerRounds />
+        </div>
     );
 }
 
