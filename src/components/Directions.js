@@ -12,6 +12,10 @@ const useStyles = makeStyles(() => ({
     },
     backButton: {
         backgroundColor: "black",
+        "&:hover": {
+            backgroundColor: "#0c0c0c",
+            color: '#1776d1',
+        },
         padding: "7px",
         width: "150px",
         borderRadius: "10px",
