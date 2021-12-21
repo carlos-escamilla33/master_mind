@@ -2,15 +2,23 @@ import React, { useState } from "react";
 import { Popover, Button, Box } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 import { PlayerRounds } from ".";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
     directionsContainer: {
         display: "flex",
-        justifyContent: "space-around",
+        justifyContent: "space-evenly",
         marginTop: "2%",
     },
-    directionsButton: {
-        height: "50px"
+    backButton: {
+        backgroundColor: "black",
+        padding: "7px",
+        width: "150px",
+        borderRadius: "10px",
+        textAlign: "center",
+        color: "white",
+        textDecoration: "none",
+        fontSize: "20px"
     }
 }))
 
@@ -30,8 +38,9 @@ const Directions = () => {
     return (
         <>
             <div className={classes.directionsContainer}>
+                <Link className={classes.backButton} to="/">Back</Link>
                 <Button
-                    className={classes.directionsButton}
+                    style={{borderRadius: "10px"}}
                     variant="contained"
                     onClick={buttonClickHandler}>
                     Game Directions

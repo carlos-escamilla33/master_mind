@@ -8,11 +8,10 @@ import LockIcon from '@mui/icons-material/Lock';
 const useStyles = makeStyles(() => ({
     loading: {
         display: "flex",
-        alignItems: "center",
+        flexDirection: "row",
         justifyContent: "center",
-        marginLeft: "30%",
-        marginRight: "20%",
-        marginTop: "1%",
+        margin: "auto",
+        marginTop: "2.5%",
         width: "40%",
     }
 }))
