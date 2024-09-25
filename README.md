@@ -34,7 +34,7 @@ Start the server
 
 ## 🛠️ Tech Used
 
- Javascript, React, MaterialUi, Axios
+ Javascript, React, MaterialUi, Axios, Model View Controller (MVC) Design Pattern
 
 
 ## 🔗 Demo
